@@ -295,6 +295,7 @@ a {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  margin-bottom: 8px;
 }
 .team-social {
   width: 40px;
@@ -305,7 +306,6 @@ a {
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  margin-top: 8px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-content ul {
@@ -476,5 +476,9 @@ a {
 .footer-social-list {
   display: flex;
   gap: 16px;
+}
+.footer-team-social:hover,
+.footer-team-social:focus {
+  background-color: #31d0aa;
 }
 /*footer*/ /*footer*/ /*footer*/ /*footer*/ /*footer*/ /*footer*/
