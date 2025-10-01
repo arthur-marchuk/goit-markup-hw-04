@@ -269,6 +269,12 @@ a {
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
 }
+
+.team-social-item {
+  list-style: none;
+  height: 40px;
+}
+
 .team-content {
   padding: 32px 0;
   text-align: center;
@@ -292,7 +298,7 @@ a {
 }
 .team-social {
   width: 40px;
-  height: 40px;
+  height: 100%;
   border-radius: 50%;
   background-color: #4d5ae5;
   display: flex;
@@ -311,6 +317,11 @@ a {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.team-social:hover,
+.team-social:focus {
+  background-color: #404bbf;
 }
 /*team*/ /*team*/ /*team*/ /*team*/ /*team*/ /*team*/ /*team*/
 /*portfolio*/ /*portfolio*/ /*portfolio*/ /*portfolio*/ /*portfolio*/
@@ -438,10 +449,6 @@ a {
   width: 24px;
   height: 24px;
   fill: #ffffff;
-}
-
-.team-social-item {
-  list-style: none;
 }
 
 .footer-team-social {
