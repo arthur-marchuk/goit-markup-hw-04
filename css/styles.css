@@ -1,6 +1,5 @@
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
   color: #434455;
   background-color: #ffffff;
 }
@@ -56,6 +55,8 @@ a {
 /*Хедр */
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header > .container {
   display: flex;
@@ -98,12 +99,28 @@ a {
   color: #2e2f42;
   display: block;
   padding: 24px 0;
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.nav-link.current,
 .nav-link:hover,
 .nav-link:focus {
   color: #404bbf;
 }
+
+.nav-link.current::after {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+
 .contacts-list {
   display: flex;
   align-items: center;
@@ -118,6 +135,7 @@ a {
   letter-spacing: 0.02em;
   padding: 24px 0;
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover,
@@ -131,6 +149,17 @@ a {
   background-color: #2e2f42;
   text-align: center;
   padding: 188px 0;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -163,6 +192,7 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -178,6 +208,18 @@ a {
 }
 .features-item {
   width: calc((100% - 72px) / 4);
+}
+
+.features-icon-wrapp {
+  height: 112px;
+  width: 100%;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  background: #f4f4fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
 .features-title {
@@ -196,6 +238,7 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+
 /*features*/ /*features*/ /*features*/ /*features*/ /*features*/
 
 /*team*/ /*team*/ /*team*/ /*team*/ /*team*/ /*team*/ /*team*/ /*team*/
@@ -247,6 +290,28 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+.team-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin-top: 8px;
+}
+.team-content ul {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.team-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
 /*team*/ /*team*/ /*team*/ /*team*/ /*team*/ /*team*/ /*team*/
 /*portfolio*/ /*portfolio*/ /*portfolio*/ /*portfolio*/ /*portfolio*/
 
@@ -289,7 +354,31 @@ a {
   letter-spacing: 0.02em;
   text-align: left;
   margin-bottom: 8px;
-  padding-left: 16px;
+}
+
+.portfolio-item:hover .overlay-text {
+  transform: translateY(0);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #4d5ae5;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px 0 32px;
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+}
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio-type {
@@ -298,7 +387,6 @@ a {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  padding-left: 16px;
 }
 
 /*portfolio*/ /*portfolio*/ /*portfolio*/ /*portfolio*/ /*portfolio*/
@@ -309,6 +397,10 @@ a {
   padding: 100px 0;
 }
 
+.footer .container {
+  display: flex;
+}
+
 .footer-text {
   color: #f4f4fd;
   font-weight: 400;
@@ -317,7 +409,6 @@ a {
   letter-spacing: 0.02em;
   display: block;
   max-width: 264px;
-  margin-top: 16px;
 }
 .footer .logo-accent {
   color: #f4f4fd;
@@ -325,8 +416,46 @@ a {
 .contacts {
   font-style: normal;
 }
-.footer a {
+
+.footer-container {
+  display: flex;
+}
+
+.logo-wrapper {
+  margin-right: 120px;
+}
+
+.footer-social-media-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer .team-icon {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+
+.footer-team-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .logo {
   display: inline-block;
   margin-bottom: 16px;
+}
+.footer-social-list {
+  display: flex;
+  gap: 16px;
 }
 /*footer*/ /*footer*/ /*footer*/ /*footer*/ /*footer*/ /*footer*/
