@@ -440,6 +440,10 @@ a {
   fill: #ffffff;
 }
 
+.team-social-item {
+  list-style: none;
+}
+
 .footer-team-social {
   width: 40px;
   height: 40px;
